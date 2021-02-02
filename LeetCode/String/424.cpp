@@ -10,12 +10,12 @@ public:
 
         if(k<0)
             k=0;
-        for(int i=0;i<s.length()&&indexFirst!=-1;i=indexFirst,op=(char)s[indexFirst])
+        for(int i=0;i<s.length()&&indexFirst!=-1;i=indexFirst)
         {            
             sum=1;
             ku=k;
             indexFirst=-1;
-            for(int step=1;ku!=-1;step++)
+            for(int step=1,flag=1;ku!=-1&&flag==1;step++)
             {
                 if(i+step<s.length())//未越界
                 {
@@ -27,14 +27,16 @@ public:
                     }
                 }
                 else
-                    ku=-1;//出循环
+                    flag=0;//出循环
                 sum++;
             }
             sum--;
 
-            if(indexFirst==-1)
-                sum+=k;
-            if(sum>s.length())//辅助前面及整个函数
+            if(ku>=0)
+                sum+=ku;
+            else
+                op=(char)s[indexFirst];
+            if(sum>=s.length())//辅助前面及整个函数
                 return s.length();
             if(maxSum<sum)
                 maxSum=sum;
@@ -46,7 +48,7 @@ public:
 int main(){
     cout<<"START PROGRAM "<<endl;
     Solution s;
-    cout <<"Long:"<< s.characterReplacement("abaa",0)<<endl;
+    cout <<"Long:"<< s.characterReplacement("AAAA",0)<<endl;
 
     getchar();
     return 0;

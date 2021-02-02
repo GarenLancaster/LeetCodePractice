@@ -10,8 +10,8 @@ public:
 
         if(k<0)
             k=0;
-        for(int i=0;i<s.length()&&indexFirst!=-1;i=indexFirst)
-        {
+        for(int i=0;i<s.length()&&indexFirst!=-1;i=indexFirst,op=(char)s[indexFirst])
+        {            
             sum=1;
             ku=k;
             indexFirst=-1;
@@ -46,7 +46,7 @@ public:
 int main(){
     cout<<"START PROGRAM "<<endl;
     Solution s;
-    cout <<"Long:"<< s.characterReplacement("ABAB",2)<<endl;
+    cout <<"Long:"<< s.characterReplacement("abaa",0)<<endl;
 
     getchar();
     return 0;

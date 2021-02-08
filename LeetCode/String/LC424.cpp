@@ -1,3 +1,7 @@
+//
+// Created by Administrator on 2021/2/8.
+//
+
 #include<iostream>
 using namespace std;
 class Solution {
@@ -11,7 +15,7 @@ public:
         if(k<0)
             k=0;
         for(int i=0;i<s.length()&&indexFirst!=-1;i=indexFirst)
-        {            
+        {
             sum=1;
             ku=k;
             indexFirst=-1;
@@ -45,7 +49,7 @@ public:
     }
 };
 
-int main(){
+int emain(){
     cout<<"START PROGRAM "<<endl;
     Solution s;
     cout <<"Long:"<< s.characterReplacement("AAAA",0)<<endl;

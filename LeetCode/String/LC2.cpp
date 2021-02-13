@@ -102,7 +102,7 @@ string PrintList(ListNode *l)
     }
     return "";
 }
-int main(){
+int amain(){
     ListNode *l1,*l2;
     ListNode *p1,*p2;
     p1=l1=new ListNode(9);
@@ -114,7 +114,7 @@ int main(){
             p1->next=new ListNode(9);
             p1=p1->next;
         }
-        if(i%2==0||true)
+        if(i%3==0)
         {
             p2->next=new ListNode(9);
             p2=p2->next;
@@ -126,4 +126,6 @@ int main(){
     cout<<"L2:"<< PrintList(l2)<<endl;
     Solution *s=new Solution();
    cout<<"LR:"<<PrintList(s->addTwoNumbers(l1,l2));
+
+   return 0;
 }

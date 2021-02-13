@@ -1,11 +1,12 @@
 #include <iostream>
-
-class Solution;
+#include "LeetCode/String/LC13.cpp"
 
 using namespace std;
 
-int main2() {
-    std::cout << "Hello, World!" << std::endl;
+int main() {
+    std::cout << "Hello, Main Activating!" << std::endl;
+
+    LC13::Order();
 
     return 0;
 }

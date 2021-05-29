@@ -49,10 +49,55 @@ public:
     }
 };
 
+<<<<<<< Updated upstream:LeetCode/String/LC424.cpp
 int emain(){
+=======
+////////////////////参考答案////////////////////////////
+class SolutionAN {
+public:
+//找最长是当前的，替换k次，得到最长值，接着跳到本最长的第一个替换的位置，以这个为基准找最长
+    int cnt[26];
+    int max(int a,int b){
+        if(a>b)
+            return a;
+        else
+            return b;
+    }
+
+    int get_max()    {
+        int ret =0;
+        for(int i=0;i<26;i++)        
+            ret=max(ret,cnt[i]);
+        return ret;        
+    }
+
+    int characterReplacement(string s, int k) {
+        int size=s.length();
+        if(k>=size){
+            return size;
+        }
+        int ret=0;
+        int l=0,r=-1;
+
+        for(;l<size;cnt[s[l]-'A']--,l++)
+        {
+            while(r+l<size&& ((r+1-l+1)-max(cnt[s[r+1]-'A']+1,get_max())<=k))
+                cnt[s[++r]-'A']++;
+            ret=max(ret,r-l+1);
+        }
+        return ret;
+    }
+};
+////////////////////////////////////////////////
+
+int main(){
+>>>>>>> Stashed changes:LeetCode/String/424.cpp
     cout<<"START PROGRAM "<<endl;
     Solution s;
     cout <<"Long:"<< s.characterReplacement("AAAA",0)<<endl;
+
+    SolutionAN san;
+    cout <<"LongAN:"<< san.characterReplacement("AAAA",0)<<endl;
 
     getchar();
     return 0;
